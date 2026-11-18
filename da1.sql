@@ -7,7 +7,7 @@ CREATE TABLE employee (
 		salary NUMERIC(10,2)
 );
 
-SELECT * FROM employee;
+SELECT * FROM employee ORDER BY employee_id ASC;
 
 INSERT INTO employee(name,position,department,hire_date,salary)
 	VALUES('Ajit Sharma','Data Analyst','Data Science','2022-05-15',65000.00),
@@ -17,7 +17,9 @@ INSERT INTO employee(name,position,department,hire_date,salary)
 		  ('Vikram Singh','Sales Executive','Sales','2023-02-12',62000.00);
 
 
-
+UPDATE employee
+SET department = 'AI'
+WHERE name ='Ajit Sharma';
 
 
 
