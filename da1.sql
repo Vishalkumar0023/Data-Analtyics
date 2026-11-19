@@ -1,26 +1,90 @@
-CREATE TABLE employee (
-		employee_id SERIAL PRIMARY KEY,
-		name VARCHAR(100) NOT NULL,
-		position VARCHAR(50),
-		department VARCHAR(50),
-		hire_date DATE,
-		salary NUMERIC(10,2)
+CREATE TABLE EMPLOYEE (
+	EMPLOYEE_ID SERIAL PRIMARY KEY,
+	NAME VARCHAR(100) NOT NULL,
+	POSITION VARCHAR(50),
+	DEPARTMENT VARCHAR(50),
+	HIRE_DATE DATE,
+	SALARY NUMERIC(10, 2)
 );
 
-SELECT * FROM employee ORDER BY employee_id ASC;
 
-INSERT INTO employee(name,position,department,hire_date,salary)
-	VALUES('Ajit Sharma','Data Analyst','Data Science','2022-05-15',65000.00),
-		  ('Priya Desai','Software Engineer','IT','2021-09-20',75000.00),
-		  ('Rajesh Kumar','HR Manager','Human Resources','2019-03-10',82000.00),
-		  ('Sneha Patel','Marketing Specialist','Marketing','2020-11-25',58000.00),
-		  ('Vikram Singh','Sales Executive','Sales','2023-02-12',62000.00);
+SELECT
+	*
+FROM
+	EMPLOYEE
+ORDER BY
+	ID ASC;
 
 
-UPDATE employee
-SET department = 'AI'
-WHERE name ='Ajit Sharma';
+INSERT INTO
+	EMPLOYEE (NAME, POSITION, DEPARTMENT, HIRE_DATE, SALARY)
+VALUES
+	(
+		'Ajit Sharma',
+		'Data Analyst',
+		'Data Science',
+		'2022-05-15',
+		65000.00
+	),
+	(
+		'Priya Desai',
+		'Software Engineer',
+		'IT',
+		'2021-09-20',
+		75000.00
+	),
+	(
+		'Rajesh Kumar',
+		'HR Manager',
+		'Human Resources',
+		'2019-03-10',
+		82000.00
+	),
+	(
+		'Sneha Patel',
+		'Marketing Specialist',
+		'Marketing',
+		'2020-11-25',
+		58000.00
+	),
+	(
+		'Vikram Singh',
+		'Sales Executive',
+		'Sales',
+		'2023-02-12',
+		62000.00
+	);
 
+
+UPDATE EMPLOYEE
+SET
+	DEPARTMENT = 'AI'
+WHERE
+	NAME = 'Ajit Sharma';
+
+
+ALTER TABLE EMPLOYEE
+RENAME COLUMN EMPLOYEE_ID TO ID;
+
+
+ALTER TABLE EMPLOYEE
+ALTER COLUMN SALARY TYPE BIGINT;
+
+
+SELECT * FROM EMPLOYEE ORDER BY ID ASC;
+
+ALTER TABLE EMPLOYEE
+ALTER COLUMN SALARY
+SET NOT NULL;
+
+
+ALTER TABLE EMPLOYEE
+ADD CONSTRAINT SALARY CHECK (SALARY <= 100000);
+
+ALTER TABLE EMPLOYEE
+RENAME TO EMPLOYEES;
+
+SELECT * FROM EMPLOYEES ORDER BY ID ASC;
 
 
 	

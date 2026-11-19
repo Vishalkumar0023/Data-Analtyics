@@ -1,0 +1,94 @@
+Part 1 – Database Creation (15 marks)
+Task 1. Create a database named company_hr.
+
+Inside this database, create a table named employees with these columns:
+Column	Data type
+employee_id	SERIAL PRIMARY KEY
+employee_name	VARCHAR(80)
+email	VARCHAR(120)
+department	VARCHAR(40)
+job_title	VARCHAR(60)
+hire_date	DATE
+salary	INTEGER
+employment_status	VARCHAR(20)
+
+Requirements:
+1. Employee ID must be automatically generated.
+2. Employee name and email must not accept NULL values.
+3. Email must be unique.
+4. Salary must initially use INTEGER.
+Part 2 – Insert Employee Data (15 marks)
+Task 2. Insert the following 12 employee records.
+Name	Department	Job title	Hire date	Salary	Status
+Aarav Mehta	Engineering	Backend Developer	2022-01-10	65000	Active
+Priya Sharma	HR	Recruiter	2021-06-15	52000	Active
+Kabir Khan	Sales	Sales Executive	2023-03-20	45000	Active
+Neha Verma	Engineering	Data Analyst	2020-11-05	72000	Active
+Rohan Gupta	Finance	Accountant	2019-08-12	61000	Active
+Isha Patel	Marketing	Content Strategist	2022-09-01	55000	Active
+Arjun Rao	Engineering	QA Engineer	2024-02-19	48000	Active
+Simran Kaur	HR	HR Executive	2023-07-11	43000	Active
+Dev Malhotra	Sales	Sales Manager	2018-04-23	88000	Active
+Ananya Das	Finance	Financial Analyst	2021-12-01	68000	Active
+Kunal Singh	Engineering	Intern	2025-01-06	18000	Intern
+Test User	QA	Test Record	2026-01-01	10000	Test
+
+Use unique email addresses of your choice for all 12 employees.
+
+Important: Do not manually insert employee IDs. Let PostgreSQL generate them.
+Part 3 – Retrieve and Verify Data (10 marks)
+Task 3. Write SQL queries to:
+1. Display all employee records.
+2. Display only employee name, department and salary.
+3. Display employees in descending order of salary.
+4. Display employees belonging to the Engineering department.
+5. Find employees whose salary is between ₹40,000 and ₹70,000.
+6. Display employees hired after January 1, 2022.
+7. Display the employee with the highest salary.
+Part 4 – Update Employee Records (20 marks)
+Task 4. HR has requested the following changes:
+1. Increase the salary of every Engineering employee by 8%.
+2. Change Kabir Khan's department from Sales to Business Development.
+3. Change Kunal Singh's job title to Junior Data Analyst.
+4. Update Kunal Singh's salary to ₹25,000.
+5. Change Simran Kaur's employment status to On Leave.
+6. Correct Aarav Mehta's job title to Java Backend Developer.
+Company expectation: Before every UPDATE operation, write a SELECT query using the same condition to verify which records will be affected.
+Part 5 – Delete Records and Columns (10 marks)
+Task 5.
+1. Delete the employee whose email belongs to Test User.
+2. Delete an employee using their employee ID.
+3. Add a temporary column named temporary_note.
+4. Insert a temporary note for one employee.
+5. Remove the temporary_note column from the employees table.
+Interview trap: Understand the difference between deleting a row and deleting a column.
+Part 6 – Alter Table and Data Types (20 marks)
+Task 6. HR has changed its database requirements.
+1. Change the salary datatype from INTEGER to NUMERIC(10,2).
+2. Increase the job_title column's maximum length from 60 to 100 characters.
+3. Add a new column named work_mode with datatype VARCHAR(20).
+4. Update Aarav's work mode to Hybrid.
+5. Update Neha's work mode to Remote.
+6. Add a column named joining_bonus with datatype NUMERIC(10,2).
+7. Update the joining bonus of three employees.
+8. Display the final table structure and verify the changes.
+Part 7 – Practical Tool Test (5 marks)
+Task 7.
+
+Using pgAdmin:
+1. Open the Query Tool and execute an UPDATE query.
+2. Open the table's data grid.
+3. Update one employee's information using the toolbar.
+4. Verify that the updated value is reflected in the database.
+Part 8 – Company Interview Questions (5 marks)
+Answer these questions in your own words:
+1. What is the difference between DDL, DML and DQL?
+2. What is the difference between DELETE, DROP and TRUNCATE?
+3. What is the difference between VARCHAR and INTEGER?
+4. Why do we use PRIMARY KEY?
+5. What is the purpose of UNIQUE?
+6. What happens when we execute UPDATE without WHERE?
+7. How can we change a column's datatype?
+8. What is the difference between deleting a row and deleting a column?
+9. What is the difference between INTEGER and NUMERIC(10,2)?
+10. What is the difference between using Query Tool and the data-editing toolbar?
