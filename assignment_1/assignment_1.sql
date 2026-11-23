@@ -80,6 +80,106 @@ WHERE employee_name = 'Kabir Khan';
 
 SELECT * FROM employees ORDER BY employee_id ASC;
 
+-- Change Kunal Singh's job title to Junior Data Analyst.
+UPDATE employees
+SET job_title = 'Junior Data Analyst'
+WHERE employee_name = 'Kunal Singh';
+
+-- Update Kunal Singh's salary to ₹25,000.
+UPDATE employees
+SET salary = 25000
+WHERE employee_name = 'Kunal Singh';
+
+
+-- Change Simran Kaur's employment status to On Leave.
+
+UPDATE employees
+SET employment_status = 'On Leave'
+WHERE employee_name = 'Simran Kaur';
+
+
+SELECT * FROM employees ORDER BY employee_id ASC;
+
+
+
+-- Correct Aarav Mehta's job title to Java Backend Developer.
+
+UPDATE employees
+SET job_title = 'Java Backend Developer'
+WHERE employee_id=1;
+
+--Part 5 – Delete Records and Columns (10 marks)
+-- Delete the employee whose email belongs to Test User.
+DELETE FROM employees
+WHERE email LIKE '%test%';
+
+-- Delete an employee using their employee ID.
+
+DELETE FROM employees
+WHERE employee_id = 3;
+
+-- Add a temporary column named temporary_note.
+
+SELECT *,
+       'Temporary Note' AS temporary_note
+FROM employees;
+
+-- Insert a temporary note for one employee.
+SELECT *,'Excellent Performance' AS temporary_note
+FROM employees
+WHERE employee_id = 1;
+
+--- Remove the temporary_note column from the employees table.
+--- temporary note created by as so no need to remove
+
+
+-- Part 6 – Alter Table and Data Types (20 marks)
+-- Task 6. HR has changed its database requirements.
+
+---Change the salary datatype from INTEGER to NUMERIC(10,2)
+ALTER TABLE employees
+ALTER COLUMN salary TYPE Numeric(10,2);
+
+--- Increase the job_title column's maximum length from 60 to 100 characters.
+
+ALTER TABLE employees
+ALTER COLUMN job_title TYPE VARCHAR(100);
+
+--- Add a new column named work_mode with datatype VARCHAR(20).
+ALTER TABLE employees
+ADD COLUMN work_mode VARCHAR(20);
+
+-- Update Aarav's work mode to Hybrid.
+UPDATE employees
+SET work_mode = 'Hybrid'
+WHERE employee_name LIKE '%Aarav%';
+
+-- Update Neha's work mode to Remote.
+UPDATE employees
+SET work_mode = 'Remote'
+WHERE employee_name LIKE '%Neha%';
+
+-- Add a column named joining_bonus with datatype NUMERIC(10,2).
+ALTER TABLE employees
+ADD COLUMN joining_bonus NUMERIC(10,2);
+
+--- Update the joining bonus of three employees.
+UPDATE employees
+SET joining_bonus = 2000.00
+WHERE employee_id <=4;
+
+
+
+
+--- 1. Display the final table structure and verify the changes.
+
+SELECT * FROM employees order by employee_id asc;
+
+
+
+
+
+
 
 
 
